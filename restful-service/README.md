@@ -1,3 +1,7 @@
+# Restful Service
+
+order_mgt_service.bal
+```
 import ballerina/http;
 
 endpoint http:Listener listener {
@@ -107,3 +111,22 @@ service<http:Service> orderMgt bind listener {
         _ = client->respond(response);
     }
 }
+```
+
+Run
+```
+ballerina run restful_service
+```
+
+Use
+```
+ curl -v -X POST -d '{ "Order": { "ID": "100500", "Name": "XYZ", "Description": "Sample order."}}' "http://localhost:9090/ordermgt/order" -H "Content-Type:application/json"
+ Output :
+< HTTP/1.1 201 Created
+< Content-Type: application/json
+< Location: http://localhost:9090/ordermgt/order/100500
+< content-length: 46
+< server: ballerina/0.981.0
+
+{"status":"Order Created.","orderId":"100500"}
+```
