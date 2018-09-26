@@ -1,5 +1,12 @@
 import ballerina/http;
+import ballerinax/docker;
 
+@docker:Config {
+    registry:"ballerina.guides.io",
+    name:"restful_service",
+    tag:"v1.0"
+}
+@docker:Expose{}
 endpoint http:Listener listener {
     port:9090
 };

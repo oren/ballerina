@@ -141,3 +141,12 @@ Build and run locally
 ballerina build restful_service
 ballerina run target/restful_service.balx
 ```
+
+Run in docker
+```
+docker run -d -p 9090:9090 ballerina.guides.io/restful_service:v1.0
+
+curl -v -X POST -d \
+   '{ "Order": { "ID": "100500", "Name": "XYZ", "Description": "Sample order."}}' \
+   "http://localhost:9090/ordermgt/order" -H "Content-Type:application/json"
+```
