@@ -135,3 +135,9 @@ Test
 ```
 ballerina test
 ```
+
+Build and run locally
+```
+ballerina build restful_service
+ballerina run target/restful_service.balx
+```
