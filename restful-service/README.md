@@ -130,3 +130,8 @@ Use
 
 {"status":"Order Created.","orderId":"100500"}
 ```
+
+Test
+```
+ballerina test
+```
